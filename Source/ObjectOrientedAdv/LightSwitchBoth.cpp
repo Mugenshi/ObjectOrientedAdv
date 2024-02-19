@@ -5,6 +5,7 @@
 
 ALightSwitchBoth::ALightSwitchBoth()
     {
+        test_encapsulation = 3500.0f;
 
         DesiredIntensity = 3000.0f;
 
@@ -40,3 +41,7 @@ void ALightSwitchBoth::ToggleLight()
 	PointLight1->ToggleVisibility();
 }
 
+float ALightSwitchBoth::GetTestEncapsulation()
+{
+    return test_encapsulation;
+}
