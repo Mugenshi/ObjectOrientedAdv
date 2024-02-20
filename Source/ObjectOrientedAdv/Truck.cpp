@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "ObjectOrientedAdv.h"
 #include "Truck.h"
+#include "ObjectOrientedAdv.h"
 
 // Sets default values
 ATruck::ATruck()
