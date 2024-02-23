@@ -1,10 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "ObjectOrientedAdv.h"
 #include "LightSwitchBoth.h"
+#include "ObjectOrientedAdv.h"
 
 ALightSwitchBoth::ALightSwitchBoth()
     {
+        test_encapsulation = 3500.0f;
 
         DesiredIntensity = 3000.0f;
 
@@ -40,3 +41,7 @@ void ALightSwitchBoth::ToggleLight()
 	PointLight1->ToggleVisibility();
 }
 
+float ALightSwitchBoth::GetTestEncapsulation()
+{
+    return test_encapsulation;
+}

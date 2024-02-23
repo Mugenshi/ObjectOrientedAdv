@@ -12,6 +12,9 @@ UCLASS()
 class OBJECTORIENTEDADV_API ALightSwitchBoth : public AActor
 {
 	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere)
+	float test_encapsulation;
 	
 public:
 	/** point light component */
@@ -43,5 +46,8 @@ public:
 	/** the desired intensity for the light */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Switch Variables")
 	float DesiredIntensity;
+
+	UFUNCTION(BlueprintCallable, Category="Switch Functions")
+	float GetTestEncapsulation();
 
 };
