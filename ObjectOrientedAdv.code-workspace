@@ -6,7 +6,7 @@
 		},
 		{
 			"name": "UE5",
-			"path": "/Users/Shared/Epic Games/UE_5.3"
+			"path": "D:\\UE\\UE_5.3"
 		}
 	],
 	"settings": {
@@ -16,728 +16,442 @@
 	"extensions": {
 		"recommendations": [
 			"ms-vscode.cpptools",
-			"ms-dotnettools.csharp",
-			"vadimcn.vscode-lldb",
-			"ms-vscode.mono-debug",
-			"dfarley1.file-picker"
+			"ms-dotnettools.csharp"
 		]
 	},
 	"tasks": {
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "ObjectOrientedAdv Mac Debug Build",
+				"label": "ObjectOrientedAdv Win64 Debug Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Debug Rebuild",
+				"label": "ObjectOrientedAdv Win64 Debug Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv Mac Debug Clean"
+					"ObjectOrientedAdv Win64 Debug Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Debug Clean",
+				"label": "ObjectOrientedAdv Win64 Debug Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv Mac DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"Mac",
-					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac DebugGame Rebuild",
+				"label": "ObjectOrientedAdv Win64 DebugGame Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "D:\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ObjectOrientedAdv Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ObjectOrientedAdv",
+					"Win64",
+					"DebugGame",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv Mac DebugGame Clean"
+					"ObjectOrientedAdv Win64 DebugGame Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac DebugGame Clean",
+				"label": "ObjectOrientedAdv Win64 DebugGame Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv Mac Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"Mac",
-					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Development Rebuild",
+				"label": "ObjectOrientedAdv Win64 Development Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "D:\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ObjectOrientedAdv Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ObjectOrientedAdv",
+					"Win64",
+					"Development",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv Mac Development Clean"
+					"ObjectOrientedAdv Win64 Development Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Development Clean",
+				"label": "ObjectOrientedAdv Win64 Development Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Test Build",
+				"label": "ObjectOrientedAdv Win64 Test Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Test Rebuild",
+				"label": "ObjectOrientedAdv Win64 Test Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv Mac Test Clean"
+					"ObjectOrientedAdv Win64 Test Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Test Clean",
+				"label": "ObjectOrientedAdv Win64 Test Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Shipping Build",
+				"label": "ObjectOrientedAdv Win64 Shipping Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Shipping Rebuild",
+				"label": "ObjectOrientedAdv Win64 Shipping Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv Mac Shipping Clean"
+					"ObjectOrientedAdv Win64 Shipping Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv Mac Shipping Clean",
+				"label": "ObjectOrientedAdv Win64 Shipping Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
 					"ObjectOrientedAdv",
-					"Mac",
+					"Win64",
 					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS Debug Build",
+				"label": "ObjectOrientedAdvEditor Win64 Debug Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS Debug Rebuild",
+				"label": "ObjectOrientedAdvEditor Win64 Debug Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv IOS Debug Clean"
+					"ObjectOrientedAdvEditor Win64 Debug Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS Debug Clean",
+				"label": "ObjectOrientedAdvEditor Win64 Debug Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS DebugGame Build",
+				"label": "ObjectOrientedAdvEditor Win64 DebugGame Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS DebugGame Rebuild",
+				"label": "ObjectOrientedAdvEditor Win64 DebugGame Rebuild",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv IOS DebugGame Clean"
+					"ObjectOrientedAdvEditor Win64 DebugGame Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS DebugGame Clean",
+				"label": "ObjectOrientedAdvEditor Win64 DebugGame Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS Development Rebuild",
+				"label": "ObjectOrientedAdvEditor Win64 Development Build",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "D:\\UE\\UE_5.3"
+				}
+			},
+			{
+				"label": "ObjectOrientedAdvEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ObjectOrientedAdvEditor",
+					"Win64",
+					"Development",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"dependsOn": [
-					"ObjectOrientedAdv IOS Development Clean"
+					"ObjectOrientedAdvEditor Win64 Development Clean"
 				],
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			},
 			{
-				"label": "ObjectOrientedAdv IOS Development Clean",
+				"label": "ObjectOrientedAdvEditor Win64 Development Clean",
 				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
 				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
+					"ObjectOrientedAdvEditor",
+					"Win64",
 					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Test Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-waitmutex"
 				],
 				"problemMatcher": "$msCompile",
 				"type": "shell",
 				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Test Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"ObjectOrientedAdv IOS Test Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Test Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Test",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Shipping Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Shipping Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"ObjectOrientedAdv IOS Shipping Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdv IOS Shipping Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdv",
-					"IOS",
-					"Shipping",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Debug Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Debug Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"ObjectOrientedAdvEditor Mac Debug Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Debug Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Debug",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac DebugGame Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac DebugGame Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"ObjectOrientedAdvEditor Mac DebugGame Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac DebugGame Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"DebugGame",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Development Build",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Development Rebuild",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex"
-				],
-				"problemMatcher": "$msCompile",
-				"dependsOn": [
-					"ObjectOrientedAdvEditor Mac Development Clean"
-				],
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
-				}
-			},
-			{
-				"label": "ObjectOrientedAdvEditor Mac Development Clean",
-				"group": "build",
-				"command": "Engine/Build/BatchFiles/Mac/Build.sh",
-				"args": [
-					"ObjectOrientedAdvEditor",
-					"Mac",
-					"Development",
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
-					"-waitmutex",
-					"-clean"
-				],
-				"problemMatcher": "$msCompile",
-				"type": "shell",
-				"options": {
-					"cwd": "/Users/Shared/Epic Games/UE_5.3"
+					"cwd": "D:\\UE\\UE_5.3"
 				}
 			}
 		]
@@ -748,104 +462,151 @@
 			{
 				"name": "Launch ObjectOrientedAdv (Debug)",
 				"request": "launch",
-				"program": "/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/Binaries/Mac/UnrealGame-Mac-Debug.app/Contents/MacOS/UnrealGame-Mac-Debug",
-				"preLaunchTask": "ObjectOrientedAdv Mac Debug Build",
+				"program": "C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "ObjectOrientedAdv Win64 Debug Build",
 				"args": [
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdv (DebugGame)",
 				"request": "launch",
-				"program": "/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/Binaries/Mac/UnrealGame-Mac-DebugGame.app/Contents/MacOS/UnrealGame-Mac-DebugGame",
-				"preLaunchTask": "ObjectOrientedAdv Mac DebugGame Build",
+				"program": "C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "ObjectOrientedAdv Win64 DebugGame Build",
 				"args": [
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdv (Development)",
 				"request": "launch",
-				"program": "/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/Binaries/Mac/UnrealGame.app/Contents/MacOS/UnrealGame",
-				"preLaunchTask": "ObjectOrientedAdv Mac Development Build",
+				"program": "C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "ObjectOrientedAdv Win64 Development Build",
 				"args": [
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdv (Test)",
 				"request": "launch",
-				"program": "/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/Binaries/Mac/UnrealGame-Mac-Test.app/Contents/MacOS/UnrealGame-Mac-Test",
-				"preLaunchTask": "ObjectOrientedAdv Mac Test Build",
+				"program": "C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "ObjectOrientedAdv Win64 Test Build",
 				"args": [
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdv (Shipping)",
 				"request": "launch",
-				"program": "/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/Binaries/Mac/UnrealGame-Mac-Shipping.app/Contents/MacOS/UnrealGame-Mac-Shipping",
-				"preLaunchTask": "ObjectOrientedAdv Mac Shipping Build",
+				"program": "C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "ObjectOrientedAdv Win64 Shipping Build",
 				"args": [
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdvEditor (Debug)",
 				"request": "launch",
-				"program": "/Users/Shared/Epic Games/UE_5.3/Engine/Binaries/Mac/UnrealEditor-Mac-Debug.app/Contents/MacOS/UnrealEditor-Mac-Debug",
-				"preLaunchTask": "ObjectOrientedAdvEditor Mac Debug Build",
+				"program": "D:\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "ObjectOrientedAdvEditor Win64 Debug Build",
 				"args": [
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject"
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdvEditor (DebugGame)",
 				"request": "launch",
-				"program": "/Users/Shared/Epic Games/UE_5.3/Engine/Binaries/Mac/UnrealEditor-Mac-DebugGame.app/Contents/MacOS/UnrealEditor-Mac-DebugGame",
-				"preLaunchTask": "ObjectOrientedAdvEditor Mac DebugGame Build",
+				"program": "D:\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "ObjectOrientedAdvEditor Win64 DebugGame Build",
 				"args": [
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject"
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Launch ObjectOrientedAdvEditor (Development)",
 				"request": "launch",
-				"program": "/Users/Shared/Epic Games/UE_5.3/Engine/Binaries/Mac/UnrealEditor.app/Contents/MacOS/UnrealEditor",
-				"preLaunchTask": "ObjectOrientedAdvEditor Mac Development Build",
+				"program": "D:\\UE\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "ObjectOrientedAdvEditor Win64 Development Build",
 				"args": [
-					"/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject"
+					"C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject"
 				],
-				"cwd": "/Users/Shared/Epic Games/UE_5.3",
-				"type": "lldb"
+				"cwd": "D:\\UE\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "D:\\UE\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "D:\\UE\\UE_5.3"
+				}
 			},
 			{
 				"name": "Generate Project Files",
 				"type": "coreclr",
 				"request": "launch",
-				"preLaunchTask": "UnrealBuildTool Mac Development Build",
-				"program": "/Users/Shared/Epic Games/UE_5.3/Engine/Build/BatchFiles/RunUBT.bat",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "D:\\UE\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
 				"args": [
 					"-projectfiles",
 					"-vscode",
-					"-project=/Users/rachatapondee/Documents/Unreal Projects/ObjectOrientedAdv/ObjectOrientedAdv.uproject",
+					"-project=C:\\Users\\phatt\\Documents\\GitHub\\ObjectOrientedAdv\\ObjectOrientedAdv.uproject",
 					"-game",
 					"-engine",
 					"-dotnet"
 				],
-				"console": "internalConsole",
-				"internalConsoleOptions": "openOnSessionStart",
+				"console": "externalTerminal",
 				"stopAtEntry": false,
-				"cwd": "/Users/Shared/Epic Games/UE_5.3"
+				"cwd": "D:\\UE\\UE_5.3"
 			}
 		]
 	}
