@@ -6,7 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Book.generated.h"
 
-UCLASS(MinimalAPI, Blueprintable)
+UCLASS(Blueprintable)
 class OBJECTORIENTEDADV_API ABook : public AActor
 {
 	GENERATED_BODY()
