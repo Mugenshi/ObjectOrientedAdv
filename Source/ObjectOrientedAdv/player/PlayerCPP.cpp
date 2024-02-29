@@ -21,14 +21,10 @@ APlayerCPP::APlayerCPP()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
-	// static ConstructorHelpers::FClassFinder<UUserWidget> CrossHairWidget(TEXT("/Game/ThirdPerson/Blueprints/WB_Crosshair"));
-
-	// TSubclassOf<UUserWidget> CrossHairWidgetClass = CrossHairWidget.Class;
-
-	// if (CrossHairWidgetClass == nullptr)
-	// {
-	// 	UE_LOG(LogTemp, Warning, TEXT("Crosshair Widget Class not found!"));
-	// }
+	if (PlayerHUDClass)
+	{	
+		ActiveWidget = CreateWidget<UUserWidget>(GetWorld(), PlayerHUDClass);
+	}
 
 	if (QuinnMesh.Succeeded())
 	{
@@ -45,8 +41,6 @@ APlayerCPP::APlayerCPP()
 		Camera->SetRelativeLocation(FVector(5.0f, 9.0f, 0.0f));
 		Camera->SetRelativeRotation(FRotator(0.0f, 90.0f, -90.0f));
 		Camera->bUsePawnControlRotation = true;
-
-		// UUserWidget* CrossHairWidgetInstance = CreateWidget<UUserWidget>(this, CrossHairWidgetClass);
 
 	}
 

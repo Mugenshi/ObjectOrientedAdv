@@ -88,7 +88,13 @@ protected:
 private:
 
 	UPROPERTY(VisibleAnywhere, Category="Camera")
-	class UCameraComponent* Camera;
+	TObjectPtr<class UCameraComponent> Camera;
+
+	UPROPERTY(EditDefaultsOnly, Category="UI")
+	TSubclassOf<class UUserWidget> PlayerHUDClass;
+
+	UPROPERTY()
+	TObjectPtr<class UUserWidget> ActiveWidget;
 
 	// Player Keys
 	TArray<FString> KeyWallet;
