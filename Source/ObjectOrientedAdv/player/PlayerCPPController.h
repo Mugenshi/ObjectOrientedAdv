@@ -13,6 +13,7 @@
 class UEnhancedInputComponent;
 class APlayerCPP;
 class UInputMappingContext;
+class APlayerCPPHUD;
 
 
 UCLASS(Abstract)
@@ -31,6 +32,10 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Character Movement")
 	TObjectPtr<UInputAction> ActionJump = nullptr;
 
+	// The Input Action to cycle UI display mode.
+	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|UI")
+	// TObjectPtr<UInputAction> ActionCycleUIMode = nullptr;
+
 	// The Input Mapping Context to use.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Character Movement")
 	TObjectPtr<UInputMappingContext> InputMappingContext = nullptr;
@@ -41,6 +46,7 @@ protected:
 	void HandleLook(const FInputActionValue& InputActionValue);
 	void HandleJump();
 	void HandleSprint();
+	// void HandleCycleUIMode();
 
 	virtual void OnPossess(APawn* InPawn) override;
 	virtual void OnUnPossess() override;
@@ -53,6 +59,10 @@ private:
 	// Used to store a reference to the pawn we are controlling.
 	UPROPERTY()
 	TObjectPtr<APlayerCPP> PlayerCharacter = nullptr;
+
+	// Used to store a reference to the pawn we are controlling.
+	UPROPERTY()
+	TObjectPtr<APlayerCPPHUD> PlayerHUD = nullptr;
 
 	GENERATED_BODY()
 	

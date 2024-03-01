@@ -21,11 +21,6 @@ APlayerCPP::APlayerCPP()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
-	if (PlayerHUDClass)
-	{	
-		ActiveWidget = CreateWidget<UUserWidget>(GetWorld(), PlayerHUDClass);
-	}
-
 	if (QuinnMesh.Succeeded())
 	{
 		GetMesh()->SetSkeletalMesh(QuinnMesh.Object);

@@ -5,11 +5,16 @@
 #include "PlayerCPP.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "PlayerCPPHUD.h"
 
 void APlayerCPPController::OnPossess(APawn* aPawn)
 {
     // Call the parent method, to let it do anything it needs to.
     Super::OnPossess(aPawn);
+
+    // Store a reference to the Player's HUD.
+    PlayerHUD = Cast<APlayerCPPHUD>(GetHUD());
+    checkf(PlayerHUD, TEXT("Unable to get reference to the HUD."));
 
     // Store a reference to the Player's Pawn.
     PlayerCharacter = Cast<APlayerCPP>(aPawn);
@@ -40,6 +45,8 @@ void APlayerCPPController::OnPossess(APawn* aPawn)
     if (ActionLook) EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleLook);
 
     if (ActionJump) EnhancedInputComponent->BindAction(ActionJump, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleJump);
+
+    // if (ActionCycleUIMode) EnhancedInputComponent->BindAction(ActionCycleUIMode, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleCycleUIMode);
 }
 
 void APlayerCPPController::OnUnPossess()
@@ -84,3 +91,11 @@ void APlayerCPPController::HandleJump()
         UE_LOG(LogTemp, Warning, TEXT("Jumping"));
     }
 }
+
+// void APlayerCPPController::HandleCycleUIMode()
+// {
+//     if (PlayerHUD)
+//     {
+//         PlayerHUD->CycleToNextViewMode();
+//     }
+// }
