@@ -46,6 +46,8 @@ void APlayerCPPController::OnPossess(APawn* aPawn)
 
     if (ActionJump) EnhancedInputComponent->BindAction(ActionJump, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleJump);
 
+    if (ActionInteract) EnhancedInputComponent->BindAction(ActionInteract, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleInteract);
+
     // if (ActionCycleUIMode) EnhancedInputComponent->BindAction(ActionCycleUIMode, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleCycleUIMode);
 }
 
@@ -89,6 +91,15 @@ void APlayerCPPController::HandleJump()
         PlayerCharacter->UnCrouch();
         PlayerCharacter->Jump();
         UE_LOG(LogTemp, Warning, TEXT("Jumping"));
+    }
+}
+
+void APlayerCPPController::HandleInteract()
+{
+    // Call the Interact method on the Player's Pawn.
+    if (PlayerCharacter)
+    {
+        PlayerCharacter->Interact();
     }
 }
 

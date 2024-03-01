@@ -21,6 +21,8 @@ APlayerCPP::APlayerCPP()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 
+	InteractionTrace = CreateDefaultSubobject<UInteractionTraceCPP>(TEXT("AC_InteractionTrace"));
+
 	if (QuinnMesh.Succeeded())
 	{
 		GetMesh()->SetSkeletalMesh(QuinnMesh.Object);
@@ -55,9 +57,10 @@ void APlayerCPP::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	// Temporarily display debug information
-
 	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
 	                                 *(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
+	
+	InteractCheck();
 
 }
 
@@ -101,4 +104,22 @@ bool APlayerCPP::IsPlayerCarryingKey(FString DesiredKey)
 	bool Result = KeyWallet.Contains(DesiredKey);
 	OnKeyWalletAction.Broadcast(DesiredKey, EPlayerKeyAction::TestKey, Result);
 	return Result;
+}
+
+void APlayerCPP::InteractCheck()
+{
+	Cast<APlayerCPPController>(GetController())->GetPlayerViewPoint(ViewVector, ViewRotation);
+	FVector VecDirection = ViewRotation.Vector() * 1000.0f;
+	FVector InteractEnd = ViewVector + VecDirection;
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+	GetWorld()->LineTraceSingleByChannel(InteractHitResult, ViewVector, InteractEnd, ECollisionChannel::ECC_GameTraceChannel1, QueryParams);
+}
+
+void APlayerCPP::Interact()
+{
+	if (Cast<AItem>(InteractHitResult.GetActor()))
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Interacting with an item"));
+	}
 }

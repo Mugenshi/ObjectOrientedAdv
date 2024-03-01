@@ -6,7 +6,8 @@
 #include "GameFramework/Character.h"
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Blueprint/UserWidget.h"
+#include "InteractionTraceCPP.h"
+#include "Item.h"
 #include "PlayerCPP.generated.h"
 
 // Delegate for when start based on integers are changed.
@@ -58,6 +59,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UFUNCTION()
+	void Interact();
+
 #pragma region Keys
 
 	// Add a key to the wallet if it isn't already in there.
@@ -90,7 +94,21 @@ private:
 	UPROPERTY(VisibleAnywhere, Category="Camera")
 	TObjectPtr<class UCameraComponent> Camera;
 
+	UPROPERTY(VisibleAnywhere, Category="Interaction")
+	TObjectPtr<class UInteractionTraceCPP> InteractionTrace;
+
+	UPROPERTY(VisibleAnywhere, Category="Interaction")
+	FHitResult InteractHitResult;
 	
+	UPROPERTY(VisibleAnywhere, Category="Interaction")
+	FVector ViewVector;
+	
+	UPROPERTY(VisibleAnywhere, Category="Interaction")
+	FRotator ViewRotation;
+
+	UFUNCTION()
+	void InteractCheck();
+
 
 	// Player Keys
 	TArray<FString> KeyWallet;

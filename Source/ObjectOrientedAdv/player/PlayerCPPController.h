@@ -32,6 +32,11 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Character Movement")
 	TObjectPtr<UInputAction> ActionJump = nullptr;
 
+	// The Input Action to map to Interaction.
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Interaction")
+	TObjectPtr<UInputAction> ActionInteract = nullptr;
+
+
 	// The Input Action to cycle UI display mode.
 	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|UI")
 	// TObjectPtr<UInputAction> ActionCycleUIMode = nullptr;
@@ -46,6 +51,7 @@ protected:
 	void HandleLook(const FInputActionValue& InputActionValue);
 	void HandleJump();
 	void HandleSprint();
+	void HandleInteract();
 	// void HandleCycleUIMode();
 
 	virtual void OnPossess(APawn* InPawn) override;
