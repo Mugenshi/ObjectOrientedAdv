@@ -59,9 +59,6 @@ void APlayerCPP::Tick(float DeltaTime)
 	// Temporarily display debug information
 	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
 	                                 *(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
-
-	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Green,
-	                                 *(FString::Printf(TEXT("$%d"), money)));
 	
 	InteractCheck();
 
@@ -125,4 +122,18 @@ void APlayerCPP::Interact()
 	{
 		money++;
 	}
+
+	if (Cast<AATM>(InteractHitResult.GetActor()))
+	{
+		if (money > 0)
+		{
+			money--;
+		}
+	}
+
+}
+
+int APlayerCPP::get_money()
+{
+	return money;
 }

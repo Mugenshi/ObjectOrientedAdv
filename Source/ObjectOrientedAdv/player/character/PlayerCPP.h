@@ -7,6 +7,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 #include "ObjectOrientedAdv/player/objects/Money.h"
+#include "ObjectOrientedAdv/player/objects/ATM.h"
 #include "PlayerCPPController.h"
 #include "PlayerCPP.generated.h"
 
@@ -61,6 +62,9 @@ public:
 
 	UFUNCTION()
 	void Interact();
+
+	UFUNCTION(Blueprintcallable, Category="Player|Interact")
+	int get_money();
 
 #pragma region Keys
 
