@@ -116,21 +116,33 @@ void APlayerCPP::InteractCheck()
 	GetWorld()->LineTraceSingleByChannel(InteractHitResult, ViewVector, InteractEnd, ECollisionChannel::ECC_GameTraceChannel1, QueryParams);
 }
 
-void APlayerCPP::Interact()
+bool APlayerCPP::Interact()
 {
 	if (Cast<AMoney>(InteractHitResult.GetActor()))
 	{
 		money++;
+		return false;
 	}
 
 	if (Cast<AATM>(InteractHitResult.GetActor()))
 	{
-		if (money > 0)
-		{
-			money--;
-		}
+		return true;
 	}
 
+	if (Cast<ATV>(InteractHitResult.GetActor()))
+	{
+		ATV* TV = Cast<ATV>(UGameplayStatics::GetActorOfClass(GetWorld(), ATV::StaticClass()));
+		AATM* ATM = Cast<AATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AATM::StaticClass()));
+		
+		if ((ATM->GetMoneyATM()) >= TV->get_price())
+		{
+			ATM->SetMoneyATM(ATM->GetMoneyATM() - TV->get_price());
+			TV->Destroy();
+		}
+
+		return false;
+	}
+	else { return false; }
 }
 
 int APlayerCPP::get_money()

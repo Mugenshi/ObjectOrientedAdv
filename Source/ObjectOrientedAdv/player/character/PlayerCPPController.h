@@ -6,6 +6,7 @@
 #include "InputAction.h"
 #include "InputActionValue.h"
 #include "GameFramework/PlayerController.h"
+#include "ObjectOrientedAdv/player/userinterface/ATMWidget.h"
 #include "PlayerCPPController.generated.h"
 
 
@@ -69,6 +70,7 @@ private:
 	// Used to store a reference to the pawn we are controlling.
 	UPROPERTY()
 	TObjectPtr<APlayerCPPHUD> PlayerHUD = nullptr;
+
 
 	GENERATED_BODY()
 	
