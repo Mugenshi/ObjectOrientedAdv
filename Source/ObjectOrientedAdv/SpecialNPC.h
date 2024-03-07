@@ -18,7 +18,6 @@ protected:
 public:
     ASpecialNPC();
 
-    
 
     UFUNCTION(BlueprintCallable, Category = "NPC")
     FString get_hobbie();
