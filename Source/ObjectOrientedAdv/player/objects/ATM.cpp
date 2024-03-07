@@ -12,6 +12,7 @@ AATM::AATM()
 void AATM::SetMoneyATM(int Money)
 {
     MoneyATM += Money;
+
 }
 
 int AATM::GetMoneyATM()

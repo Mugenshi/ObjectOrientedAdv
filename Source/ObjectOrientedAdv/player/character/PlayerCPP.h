@@ -65,7 +65,10 @@ public:
 	bool Interact();
 
 	UFUNCTION(Blueprintcallable, Category="Player|Interact")
-	int get_money();
+	int GetMoney();
+
+	UFUNCTION(Blueprintcallable, Category = "Player|Interact")
+	void DeductMoney(int deposited);
 
 #pragma region Keys
 
@@ -98,6 +101,7 @@ private:
 
 	UPROPERTY()
 	int money;
+	int moneyLimit;
 
 	UPROPERTY(VisibleAnywhere, Category="Camera")
 	TObjectPtr<class UCameraComponent> Camera;

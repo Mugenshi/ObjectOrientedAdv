@@ -120,12 +120,23 @@ bool APlayerCPP::Interact()
 {
 	if (Cast<AMoney>(InteractHitResult.GetActor()))
 	{
-		money++;
-		return false;
+		if (moneyLimit >= 50000) {
+			AMoney* MONEY = Cast<AMoney>(UGameplayStatics::GetActorOfClass(GetWorld(), AMoney::StaticClass()));
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Money has accumulated to its limit"), KeyWallet.Num())));
+			MONEY->Destroy();
+			return false;
+		} else {
+			moneyLimit += 1000;
+			money += 1000;
+			return false;
+		};
+
+		
 	}
 
 	if (Cast<AATM>(InteractHitResult.GetActor()))
-	{
+	{	
 		return true;
 	}
 
@@ -145,7 +156,12 @@ bool APlayerCPP::Interact()
 	else { return false; }
 }
 
-int APlayerCPP::get_money()
+int APlayerCPP::GetMoney()
 {
 	return money;
+}
+
+void APlayerCPP::DeductMoney(int deposited)
+{
+	money = money - deposited;
 }
