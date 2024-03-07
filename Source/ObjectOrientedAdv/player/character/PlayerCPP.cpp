@@ -59,9 +59,6 @@ void APlayerCPP::Tick(float DeltaTime)
 	// Temporarily display debug information
 	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
 	                                 *(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
-
-	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Green,
-	                                 *(FString::Printf(TEXT("$%d"), money)));
 	
 	InteractCheck();
 
@@ -119,12 +116,38 @@ void APlayerCPP::InteractCheck()
 	GetWorld()->LineTraceSingleByChannel(InteractHitResult, ViewVector, InteractEnd, ECollisionChannel::ECC_GameTraceChannel1, QueryParams);
 }
 
-void APlayerCPP::Interact()
+bool APlayerCPP::Interact()
 {
 	if (Cast<AMoney>(InteractHitResult.GetActor()))
 	{
 		money++;
+		return false;
 	}
+
+	if (Cast<AATM>(InteractHitResult.GetActor()))
+	{
+		return true;
+	}
+
+	if (Cast<ATV>(InteractHitResult.GetActor()))
+	{
+		ATV* TV = Cast<ATV>(UGameplayStatics::GetActorOfClass(GetWorld(), ATV::StaticClass()));
+		AATM* ATM = Cast<AATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AATM::StaticClass()));
+		
+		if ((ATM->GetMoneyATM()) >= TV->get_price())
+		{
+			ATM->SetMoneyATM(ATM->GetMoneyATM() - TV->get_price());
+			TV->Destroy();
+		}
+
+		return false;
+	}
+	else { return false; }
+}
+
+int APlayerCPP::get_money()
+{
+	return money;
 }
 
 int APlayerCPP::ReturnMoney()

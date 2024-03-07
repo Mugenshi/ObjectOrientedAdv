@@ -6,6 +6,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "ObjectOrientedAdv/player/userinterface/PlayerCPPHUD.h"
+#include "Blueprint/WidgetBlueprintLibrary.h"
 
 void APlayerCPPController::OnPossess(APawn* aPawn)
 {
@@ -99,7 +100,13 @@ void APlayerCPPController::HandleInteract()
     // Call the Interact method on the Player's Pawn.
     if (PlayerCharacter)
     {
-        PlayerCharacter->Interact();
+        bool isATM = PlayerCharacter->Interact();
+        if (isATM)
+        {
+            PlayerHUD->CycleToNextViewMode();
+            bShowMouseCursor = true;
+            UWidgetBlueprintLibrary::SetInputMode_UIOnlyEx(this, PlayerHUD->GetCurrentWidget(), EMouseLockMode::DoNotLock);
+        }
     }
 }
 

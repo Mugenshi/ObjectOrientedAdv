@@ -7,6 +7,8 @@
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 #include "ObjectOrientedAdv/player/objects/Money.h"
+#include "ObjectOrientedAdv/player/objects/ATM.h"
+#include "ObjectOrientedAdv/player/objects/TV.h"
 #include "PlayerCPPController.h"
 #include "PlayerCPP.generated.h"
 
@@ -60,7 +62,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
-	void Interact();
+	bool Interact();
+
+	UFUNCTION(Blueprintcallable, Category="Player|Interact")
+	int get_money();
 
 #pragma region Keys
 
