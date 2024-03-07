@@ -12,7 +12,7 @@ class OBJECTORIENTEDADV_API ASpecialNPC : public ANPC
     GENERATED_BODY()
 
 protected:
-	UPROPERTY(EditAnywhere, Category = "Attributes")
+	UPROPERTY(EditAnywhere, Category = "attribute")
     FString hobbie;
     
 public:
