@@ -7,5 +7,5 @@
 FText UDefaultLayout::GetMoneyText()
 {
     PlayerCharacter = Cast<APlayerCPP>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
-    return FText::FromString(FString::FromInt(PlayerCharacter->get_money()));
+    return FText::FromString(FString::FromInt(PlayerCharacter->GetMoney()));
 }
