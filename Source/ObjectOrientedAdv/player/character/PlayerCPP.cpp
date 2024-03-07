@@ -126,3 +126,8 @@ void APlayerCPP::Interact()
 		money++;
 	}
 }
+
+int APlayerCPP::ReturnMoney()
+{
+	return money;
+}
