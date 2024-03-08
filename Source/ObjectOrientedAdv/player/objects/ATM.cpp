@@ -15,6 +15,11 @@ void AATM::SetMoneyATM(int Money)
 
 }
 
+void AATM::DeductMoneyATM(int Money)
+{
+    MoneyATM -= Money;
+}
+
 int AATM::GetMoneyATM()
 {
     return MoneyATM;

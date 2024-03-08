@@ -8,11 +8,10 @@
 // Sets default values
 APlayerCPP::APlayerCPP()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	SetActorTickInterval(0.5f);
 	SetActorTickEnabled(true);
-	
+
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> QuinnMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple'"));
 
 	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> QuinnAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn'"));
@@ -47,7 +46,7 @@ APlayerCPP::APlayerCPP()
 void APlayerCPP::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -58,8 +57,8 @@ void APlayerCPP::Tick(float DeltaTime)
 
 	// Temporarily display debug information
 	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
-	                                 *(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
-	
+		*(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
+
 	InteractCheck();
 
 }
@@ -120,8 +119,20 @@ bool APlayerCPP::Interact()
 {
 	if (Cast<AMoney>(InteractHitResult.GetActor()))
 	{
-		money++;
-		return false;
+		if (moneyLimit >= 50000) {
+			AMoney* MONEY = Cast<AMoney>(UGameplayStatics::GetActorOfClass(GetWorld(), AMoney::StaticClass()));
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Money has accumulated to its limit"), KeyWallet.Num())));
+			MONEY->Destroy();
+			return false;
+		}
+		else {
+			moneyLimit += 1000;
+			money += 1000;
+			return false;
+		};
+
+
 	}
 
 	if (Cast<AATM>(InteractHitResult.GetActor()))
@@ -133,10 +144,10 @@ bool APlayerCPP::Interact()
 	{
 		ATV* TV = Cast<ATV>(UGameplayStatics::GetActorOfClass(GetWorld(), ATV::StaticClass()));
 		AATM* ATM = Cast<AATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AATM::StaticClass()));
-		
+
 		if ((ATM->GetMoneyATM()) >= TV->get_price())
 		{
-			ATM->SetMoneyATM(ATM->GetMoneyATM() - TV->get_price());
+			ATM->DeductMoneyATM(TV->get_price());
 			TV->Destroy();
 		}
 
@@ -145,12 +156,12 @@ bool APlayerCPP::Interact()
 	else { return false; }
 }
 
-int APlayerCPP::get_money()
+int APlayerCPP::GetMoney()
 {
 	return money;
 }
 
-int APlayerCPP::ReturnMoney()
+void APlayerCPP::DeductMoney(int deposited)
 {
-	return money;
+	money = money - deposited;
 }
