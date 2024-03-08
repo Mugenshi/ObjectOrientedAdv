@@ -148,7 +148,7 @@ bool APlayerCPP::Interact()
 
 		if ((ATM->GetMoneyATM()) >= TV->get_price())
 		{
-			ATM->SetMoneyATM(ATM->GetMoneyATM() - TV->get_price());
+			ATM->DeductMoneyATM(TV->get_price());
 			TV->Destroy();
 		}
 

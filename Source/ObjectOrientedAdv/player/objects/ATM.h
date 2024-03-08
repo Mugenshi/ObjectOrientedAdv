@@ -21,6 +21,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 	int GetMoneyATM();
 
+	UFUNCTION(BlueprintCallable)
+	void DeductMoneyATM(int Money);
+
 private:
 	UPROPERTY()
 	int MoneyATM;
