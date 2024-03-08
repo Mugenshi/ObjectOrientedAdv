@@ -118,9 +118,6 @@ private:
 	UFUNCTION()
 	void InteractCheck();
 	
-	UFUNCTION(BlueprintCallable)
-	int ReturnMoney();
-	
 	// Player Keys
 	TArray<FString> KeyWallet;
 
