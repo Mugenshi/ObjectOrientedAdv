@@ -154,6 +154,47 @@ bool APlayerCPP::Interact()
 
 		return false;
 	}
+
+	if (Cast<AVisaRegular>(InteractHitResult.GetActor()))
+	{
+		AVisaRegular* Visa = Cast<AVisaRegular>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaRegular::StaticClass()));
+
+		AddKey(Visa->GetKeyString());
+		Visa->Destroy();
+		
+		return false;
+	}
+
+	if (Cast<AAmericanExpress>(InteractHitResult.GetActor()))
+	{
+		AAmericanExpress* AmericanExpress = Cast<AAmericanExpress>(UGameplayStatics::GetActorOfClass(GetWorld(), AAmericanExpress::StaticClass()));
+
+		AddKey(AmericanExpress->GetKeyString());
+		AmericanExpress->Destroy();
+
+		return false;
+	}
+
+	if (Cast<AVisaPrev>(InteractHitResult.GetActor()))
+	{
+		AVisaPrev* VisaPrev = Cast<AVisaPrev>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaPrev::StaticClass()));
+
+		AddKey(VisaPrev->GetKeyString());
+		VisaPrev->Destroy();
+
+		return false;
+	}
+
+	if (Cast<AIndianCard>(InteractHitResult.GetActor()))
+	{
+		AIndianCard* IndianCard = Cast<AIndianCard>(UGameplayStatics::GetActorOfClass(GetWorld(), AIndianCard::StaticClass()));
+
+		AddKey(IndianCard->GetKeyString());
+		IndianCard->Destroy();
+
+		return false;
+	}
+
 	else { return false; }
 }
 

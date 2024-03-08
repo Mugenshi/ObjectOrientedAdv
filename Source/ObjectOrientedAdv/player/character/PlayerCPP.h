@@ -6,9 +6,15 @@
 #include "GameFramework/Character.h"
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
+
 #include "ObjectOrientedAdv/player/objects/Money.h"
 #include "ObjectOrientedAdv/player/objects/ATM.h"
 #include "ObjectOrientedAdv/player/objects/TV.h"
+#include "ObjectOrientedAdv/player/objects/card/VisaRegular.h"
+#include "ObjectOrientedAdv/player/objects/card/AmericanExpress.h"
+#include "ObjectOrientedAdv/player/objects/card/VisaPrev.h"
+#include "ObjectOrientedAdv/player/objects/card/IndianCard.h"
+
 #include "PlayerCPPController.h"
 #include "PlayerCPP.generated.h"
 
