@@ -6,10 +6,10 @@ ASpecialNPC::ASpecialNPC()
 {
     PrimaryActorTick.bCanEverTick = true;
     name = "Special npc";
-    hobbie = "npcing";
+    last_name = "npcing";
 }
 
-FString ASpecialNPC::get_hobbie()
+FString ASpecialNPC::get_last_name()
 {
-    return hobbie;
+    return last_name;
 }

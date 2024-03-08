@@ -7,11 +7,11 @@ AIHNPC::AIHNPC()
 {
     PrimaryActorTick.bCanEverTick = true;
     name = "IHNPC npc";
-    hobbie = "npcing";
-    med_con = "AIDS";
+    last_name = "npcing";
+    hobbie = "AIDS";
 }
 
-FString AIHNPC::get_med_con() 
+FString AIHNPC::get_hobbie() 
 {
-    return med_con;
+    return hobbie;
 }

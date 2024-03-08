@@ -13,12 +13,12 @@ class OBJECTORIENTEDADV_API ASpecialNPC : public ANPC
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "attribute")
-    FString hobbie;
+    FString last_name;
     
 public:
     ASpecialNPC();
 
 
     UFUNCTION(BlueprintCallable, Category = "NPC")
-    FString get_hobbie();
+    FString get_last_name();
 };
