@@ -159,8 +159,13 @@ bool APlayerCPP::Interact()
 	{
 		AVisaRegular* Visa = Cast<AVisaRegular>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaRegular::StaticClass()));
 
-		AddKey(Visa->GetKeyString());
-		Visa->Destroy();
+		if (KeyWallet.Num() == 1) {
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Maximum"))));
+		} else {
+			AddKey(Visa->GetKeyString());
+			Visa->Destroy();
+		}
 		
 		return false;
 	}
@@ -169,8 +174,14 @@ bool APlayerCPP::Interact()
 	{
 		AAmericanExpress* AmericanExpress = Cast<AAmericanExpress>(UGameplayStatics::GetActorOfClass(GetWorld(), AAmericanExpress::StaticClass()));
 
-		AddKey(AmericanExpress->GetKeyString());
-		AmericanExpress->Destroy();
+		if (KeyWallet.Num() == 1) {
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Maximum"))));
+		} else {
+			AddKey(AmericanExpress->GetKeyString());
+			AmericanExpress->Destroy();
+		}
+
 
 		return false;
 	}
@@ -179,8 +190,13 @@ bool APlayerCPP::Interact()
 	{
 		AVisaPrev* VisaPrev = Cast<AVisaPrev>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaPrev::StaticClass()));
 
-		AddKey(VisaPrev->GetKeyString());
-		VisaPrev->Destroy();
+		if (KeyWallet.Num() == 1) {
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Maximum"))));
+		} else {
+			AddKey(VisaPrev->GetKeyString());
+			VisaPrev->Destroy();
+		}
 
 		return false;
 	}
@@ -189,8 +205,90 @@ bool APlayerCPP::Interact()
 	{
 		AIndianCard* IndianCard = Cast<AIndianCard>(UGameplayStatics::GetActorOfClass(GetWorld(), AIndianCard::StaticClass()));
 
-		AddKey(IndianCard->GetKeyString());
-		IndianCard->Destroy();
+		if (KeyWallet.Num() == 1) {
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
+				*(FString::Printf(TEXT("Maximum"))));
+		} else {
+			AddKey(IndianCard->GetKeyString());
+			IndianCard->Destroy();
+		}
+
+		return false;
+	}
+
+	if (Cast<AAmericanExATM>(InteractHitResult.GetActor()))
+	{
+		AAmericanExATM* AmericanExATM = Cast<AAmericanExATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AAmericanExATM::StaticClass()));
+
+		if (IsPlayerCarryingKey(AmericanExATM->GetDesiredKey()))
+		{
+			AmericanExATM->IsSuccess = "Success";
+			RemoveKey(AmericanExATM->GetDesiredKey());
+		}
+		else
+		{
+			AmericanExATM->IsSuccess = "Fail";
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Red,
+				*(FString::Printf(TEXT("Error"))));
+		}
+
+		return false;
+	}
+
+	if (Cast<AVisaRegATM>(InteractHitResult.GetActor()))
+	{
+		AVisaRegATM* VisaRegATM = Cast<AVisaRegATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaRegATM::StaticClass()));
+		FTimerHandle UnusedHandle;
+
+		if (IsPlayerCarryingKey(VisaRegATM->GetDesiredKey()))
+		{
+			VisaRegATM->IsSuccess = "Success";
+			RemoveKey(VisaRegATM->GetDesiredKey());
+		}
+		else
+		{
+			VisaRegATM->IsSuccess = "Fail";
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Red,
+				*(FString::Printf(TEXT("Error"))));
+		}
+
+		return false;
+	}
+
+	if (Cast<AVisaPrevATM>(InteractHitResult.GetActor()))
+	{
+		AVisaPrevATM* VisaPrevATM = Cast<AVisaPrevATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AVisaPrevATM::StaticClass()));
+
+		if (IsPlayerCarryingKey(VisaPrevATM->GetDesiredKey()))
+		{
+			VisaPrevATM->IsSuccess = "Success";
+			RemoveKey(VisaPrevATM->GetDesiredKey());
+		}
+		else
+		{
+			VisaPrevATM->IsSuccess = "Fail";
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Red,
+				*(FString::Printf(TEXT("Error"))));
+		}
+
+		return false;
+	}
+
+	if (Cast<AIndianCardATM>(InteractHitResult.GetActor()))
+	{
+		AIndianCardATM* IndianCardATM = Cast<AIndianCardATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AIndianCardATM::StaticClass()));
+
+		if (IsPlayerCarryingKey(IndianCardATM->GetDesiredKey()))
+		{
+			IndianCardATM->IsSuccess = "Success";
+			RemoveKey(IndianCardATM->GetDesiredKey());
+		}
+		else
+		{
+			IndianCardATM->IsSuccess = "Fail";
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Red,
+				*(FString::Printf(TEXT("Error"))));
+		}
 
 		return false;
 	}

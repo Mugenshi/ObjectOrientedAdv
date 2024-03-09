@@ -4,8 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
+#include "TimerManager.h"
 
 #include "ObjectOrientedAdv/player/objects/Money.h"
 #include "ObjectOrientedAdv/player/objects/ATM.h"
@@ -14,6 +16,10 @@
 #include "ObjectOrientedAdv/player/objects/card/AmericanExpress.h"
 #include "ObjectOrientedAdv/player/objects/card/VisaPrev.h"
 #include "ObjectOrientedAdv/player/objects/card/IndianCard.h"
+#include "ObjectOrientedAdv/player/objects/atmlv4/AmericanExATM.h"
+#include "ObjectOrientedAdv/player/objects/atmlv4/VisaRegATM.h"
+#include "ObjectOrientedAdv/player/objects/atmlv4/VisaPrevATM.h"
+#include "ObjectOrientedAdv/player/objects/atmlv4/IndianCardATM.h"
 
 #include "PlayerCPPController.h"
 #include "PlayerCPP.generated.h"

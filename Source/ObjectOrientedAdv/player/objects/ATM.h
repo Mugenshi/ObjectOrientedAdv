@@ -24,9 +24,18 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void DeductMoneyATM(int Money);
 
+	// UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ATM")
+	// FString IsSuccess;
+
+	// UFUNCTION()
+	// virtual FString GetKeyString() const { return DesiredKey; }
+
 private:
 	UPROPERTY()
 	int MoneyATM;
+
+	// UPROPERTY()
+	// FString DesiredKey;
 
 	GENERATED_BODY()
 	
