@@ -48,6 +48,20 @@ void APlayerCPP::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
+
+	if (AnimInstance && AnimMontage)
+	{
+		AnimInstance->Montage_Play(AnimMontage);
+	}
+	else {
+		for (int i = 0; i < 10; i++)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Red,
+				TEXT("Error"));
+		}
+	}
+
 }
 
 // Called every frame

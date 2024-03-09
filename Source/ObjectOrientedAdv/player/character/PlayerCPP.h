@@ -8,6 +8,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
 #include "TimerManager.h"
+#include "Animation/AnimMontage.h"
 
 #include "ObjectOrientedAdv/player/objects/Money.h"
 #include "ObjectOrientedAdv/player/objects/ATM.h"
@@ -57,6 +58,9 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FKeyWalletAction,
 	FString, KeyString,
 	EPlayerKeyAction, KeyAction,
 	bool, IsSuccess);
+
+// Declaration
+class UAnimMontage;
 
 UCLASS()
 class OBJECTORIENTEDADV_API APlayerCPP : public ACharacter
@@ -129,9 +133,10 @@ private:
 
 	UFUNCTION()
 	void InteractCheck();
+
+	UPROPERTY(EditAnywhere, Category = "Montage", meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<UAnimMontage> AnimMontage;
 	
-
-
 	// Player Keys
 	TArray<FString> KeyWallet;
 
