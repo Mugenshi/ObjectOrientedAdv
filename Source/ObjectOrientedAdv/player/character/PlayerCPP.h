@@ -21,6 +21,7 @@
 #include "ObjectOrientedAdv/player/objects/atmlv4/VisaRegATM.h"
 #include "ObjectOrientedAdv/player/objects/atmlv4/VisaPrevATM.h"
 #include "ObjectOrientedAdv/player/objects/atmlv4/IndianCardATM.h"
+#include "ObjectOrientedAdv/player/objects/card/NoteObject.h"
 
 #include "PlayerCPPController.h"
 #include "PlayerCPP.generated.h"
@@ -78,7 +79,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION()
-	bool Interact();
+	FString Interact();
 
 	UFUNCTION(Blueprintcallable, Category = "Player|Interact")
 	int GetMoney();

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
+#include "Components/Widget.h"
 #include "PlayerCPPHUD.generated.h"
 
 
@@ -11,12 +12,14 @@
 class APlayerCPP;
 class UDefaultLayout;
 class UATMWidget;
+class UCreditCardNote;
 
 UENUM(BlueprintType)
 enum class EHudViewMode: uint8
 {
 	DefaultLayout UMETA(Tooltip="Default Widget"),
 	ATMWidget UMETA(Tooltip="ATM Widget"),
+	CreditCardNote UMETA(Tooltip="Credit Card Note")
 };
 
 inline EHudViewMode& operator++(EHudViewMode& ViewMode)
@@ -49,12 +52,15 @@ public:
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UATMWidget> ATMWidgetClass;
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UCreditCardNote> CreditCardNoteClass;
+
 	UFUNCTION(BlueprintCallable)
 	void SetViewMode(EHudViewMode NewViewMode);
 
 	// Change to the next viewmode 
 	UFUNCTION(BlueprintCallable) 
-	void CycleToNextViewMode();
+	void CycleToNextViewMode(int choice);
 
 	UWidget* GetCurrentWidget();
 
@@ -76,6 +82,9 @@ private:
 
 	UPROPERTY()
 	TObjectPtr<UATMWidget> ATMWidget = nullptr;
+
+	UPROPERTY()
+	TObjectPtr<UCreditCardNote> CreditCardNote = nullptr;
 
 	UPROPERTY()
 	TObjectPtr<UWorld> World = nullptr;

@@ -5,6 +5,7 @@
 #include "ObjectOrientedAdv/player/character/PlayerCPP.h"
 #include "DefaultLayout.h"
 #include "ATMWidget.h"
+#include "CreditCardNote.h"
 
 void APlayerCPPHUD::BeginPlay()
 {
@@ -16,6 +17,7 @@ void APlayerCPPHUD::BeginPlay()
     // Ensure we have valid values for the 3 classes of widget used by the HUD.
     checkf(DefaultLayoutClass, TEXT("DefaultLayoutClass is not set."));
     checkf(ATMWidgetClass, TEXT("ATMWidgetClass is not set."));
+    checkf(CreditCardNoteClass, TEXT("CreditCardNoteClass is not set."));
 
     // Create the default layout widget.
     DefaultLayout = CreateWidget<UDefaultLayout>(World, DefaultLayoutClass);
@@ -25,6 +27,10 @@ void APlayerCPPHUD::BeginPlay()
     ATMWidget = CreateWidget<UATMWidget>(World, ATMWidgetClass);
     ATMWidget->AddToViewport();
     ATMWidget->SetVisibility(ESlateVisibility::Collapsed);
+
+    CreditCardNote = CreateWidget<UCreditCardNote>(World, CreditCardNoteClass);
+    CreditCardNote->AddToViewport();
+    CreditCardNote->SetVisibility(ESlateVisibility::Collapsed);
 
     UpdateWidget();
 }
@@ -45,13 +51,16 @@ void APlayerCPPHUD::SetViewMode(EHudViewMode NewViewMode)
     UpdateWidget();
 }
 
-void APlayerCPPHUD::CycleToNextViewMode()
+void APlayerCPPHUD::CycleToNextViewMode(int choice)
 {
-    // Cycle to the next view mode.
-    ++CurrentViewMode;
-    
-    GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
-        FString::Printf(TEXT("CurrentViewMode: %d"), static_cast<int>(CurrentViewMode)));
+    if (choice == 1)
+    {
+        ++CurrentViewMode;
+    }
+    else if (choice == 2)
+    {
+        CurrentViewMode = EHudViewMode::CreditCardNote;
+    }
     
     UpdateWidget();
     
@@ -65,10 +74,17 @@ void APlayerCPPHUD::UpdateWidget()
     case EHudViewMode::DefaultLayout:
         DefaultLayout->SetVisibility(ESlateVisibility::Visible);
         ATMWidget->SetVisibility(ESlateVisibility::Collapsed);
+        CreditCardNote->SetVisibility(ESlateVisibility::Collapsed);
         break;
     case EHudViewMode::ATMWidget:
         DefaultLayout->SetVisibility(ESlateVisibility::Collapsed);
         ATMWidget->SetVisibility(ESlateVisibility::Visible);
+        CreditCardNote->SetVisibility(ESlateVisibility::Collapsed);
+        break;
+    case EHudViewMode::CreditCardNote:
+        DefaultLayout->SetVisibility(ESlateVisibility::Collapsed);
+        ATMWidget->SetVisibility(ESlateVisibility::Collapsed);
+        CreditCardNote->SetVisibility(ESlateVisibility::Visible);
         break;
     default:
         break;
@@ -82,8 +98,11 @@ UWidget* APlayerCPPHUD::GetCurrentWidget()
     {
         return DefaultLayout;
     }
-    else
+    else if (CurrentViewMode == EHudViewMode::CreditCardNote)
     {
+        return CreditCardNote;
+    }
+    else {
         return ATMWidget;
     }
 }

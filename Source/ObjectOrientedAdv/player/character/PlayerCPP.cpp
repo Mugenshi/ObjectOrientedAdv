@@ -130,7 +130,7 @@ void APlayerCPP::InteractCheck()
 	GetWorld()->LineTraceSingleByChannel(InteractHitResult, ViewVector, InteractEnd, ECollisionChannel::ECC_GameTraceChannel1, QueryParams);
 }
 
-bool APlayerCPP::Interact()
+FString APlayerCPP::Interact()
 {
 	if (Cast<AMoney>(InteractHitResult.GetActor()))
 	{
@@ -139,12 +139,12 @@ bool APlayerCPP::Interact()
 			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
 				*(FString::Printf(TEXT("Money has accumulated to its limit"), KeyWallet.Num())));
 			MONEY->Destroy();
-			return false;
+			return "false";
 		}
 		else {
 			moneyLimit += 1000;
 			money += 1000;
-			return false;
+			return "false";
 		};
 
 
@@ -152,7 +152,7 @@ bool APlayerCPP::Interact()
 
 	if (Cast<AATM>(InteractHitResult.GetActor()))
 	{
-		return true;
+		return "true";
 	}
 
 	if (Cast<ATV>(InteractHitResult.GetActor()))
@@ -166,7 +166,7 @@ bool APlayerCPP::Interact()
 			TV->Destroy();
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AVisaRegular>(InteractHitResult.GetActor()))
@@ -181,7 +181,7 @@ bool APlayerCPP::Interact()
 			Visa->Destroy();
 		}
 		
-		return false;
+		return "false";
 	}
 
 	if (Cast<AAmericanExpress>(InteractHitResult.GetActor()))
@@ -197,7 +197,7 @@ bool APlayerCPP::Interact()
 		}
 
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AVisaPrev>(InteractHitResult.GetActor()))
@@ -212,7 +212,7 @@ bool APlayerCPP::Interact()
 			VisaPrev->Destroy();
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AIndianCard>(InteractHitResult.GetActor()))
@@ -227,7 +227,7 @@ bool APlayerCPP::Interact()
 			IndianCard->Destroy();
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AAmericanExATM>(InteractHitResult.GetActor()))
@@ -246,7 +246,7 @@ bool APlayerCPP::Interact()
 				*(FString::Printf(TEXT("Error"))));
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AVisaRegATM>(InteractHitResult.GetActor()))
@@ -266,7 +266,7 @@ bool APlayerCPP::Interact()
 				*(FString::Printf(TEXT("Error"))));
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AVisaPrevATM>(InteractHitResult.GetActor()))
@@ -285,7 +285,7 @@ bool APlayerCPP::Interact()
 				*(FString::Printf(TEXT("Error"))));
 		}
 
-		return false;
+		return "false";
 	}
 
 	if (Cast<AIndianCardATM>(InteractHitResult.GetActor()))
@@ -304,10 +304,15 @@ bool APlayerCPP::Interact()
 				*(FString::Printf(TEXT("Error"))));
 		}
 
-		return false;
+		return "false";
 	}
 
-	else { return false; }
+	if (Cast<ANoteObject>(InteractHitResult.GetActor()))
+	{
+		return "note";
+	}
+
+	else { return "false"; }
 }
 
 int APlayerCPP::GetMoney()

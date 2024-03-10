@@ -100,10 +100,16 @@ void APlayerCPPController::HandleInteract()
     // Call the Interact method on the Player's Pawn.
     if (PlayerCharacter)
     {
-        bool isATM = PlayerCharacter->Interact();
-        if (isATM)
+        FString isATM = PlayerCharacter->Interact();
+        if (isATM == "true")
         {
-            PlayerHUD->CycleToNextViewMode();
+            PlayerHUD->CycleToNextViewMode(1);
+            bShowMouseCursor = true;
+            UWidgetBlueprintLibrary::SetInputMode_UIOnlyEx(this, PlayerHUD->GetCurrentWidget(), EMouseLockMode::DoNotLock);
+        }
+        else if (isATM == "note")
+        {
+            PlayerHUD->CycleToNextViewMode(2);
             bShowMouseCursor = true;
             UWidgetBlueprintLibrary::SetInputMode_UIOnlyEx(this, PlayerHUD->GetCurrentWidget(), EMouseLockMode::DoNotLock);
         }
