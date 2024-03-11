@@ -32,7 +32,9 @@ void APlayerCPPHUD::BeginPlay()
     CreditCardNote->AddToViewport();
     CreditCardNote->SetVisibility(ESlateVisibility::Collapsed);
 
-    UpdateWidget();
+    FTimerHandle TimerHandle;
+
+    GetWorldTimerManager().SetTimer(TimerHandle, this, &APlayerCPPHUD::UpdateWidget, 5.f, false);
 }
 
 void APlayerCPPHUD::EndPlay(const EEndPlayReason::Type EndPlayReason)
