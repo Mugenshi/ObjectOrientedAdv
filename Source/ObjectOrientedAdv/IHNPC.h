@@ -14,12 +14,12 @@ class OBJECTORIENTEDADV_API AIHNPC : public ASpecialNPC
 
 protected:
 	UPROPERTY(EditAnywhere, Category = "attribute") // Changed 'category' to 'Category'
-	FString med_con;
+	FString hobbie;
 
 public:
 	AIHNPC();
 
 	UFUNCTION(BlueprintCallable, Category = "NPC") // Changed 'category' to 'Category'
-	FString get_med_con();	
+	FString get_hobbie();	
 	
 };
