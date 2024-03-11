@@ -12,6 +12,8 @@ ACamperVan::ACamperVan()
 
 	Speed = 60.0f;
 	Weight = 2000.0f;
+	Year = 1985;
+	Seats = 2;
 
 }
 
@@ -38,4 +40,15 @@ float ACamperVan::GetWeight_Implementation()
 {
 	return Weight;
 }
+
+int ACamperVan::GetYear_Implementation()
+{
+	return Year;
+}
+
+int ACamperVan::GetSeats_Implementation()
+{
+	return Seats;
+}
+
 

@@ -17,6 +17,12 @@ class OBJECTORIENTEDADV_API AHatchback : public AActor, public IVehicles
 
 	UPROPERTY(EditAnywhere)
 	float Weight;
+
+	UPROPERTY()
+	int Year;
+
+	UPROPERTY()
+	int Seats;
 	
 public:	
 	// Sets default values for this actor's properties
@@ -32,5 +38,7 @@ public:
 
 	float GetSpeed_Implementation() override;
 	float GetWeight_Implementation() override;
+	int GetYear_Implementation() override;
+	int GetSeats_Implementation() override;
 
 };
