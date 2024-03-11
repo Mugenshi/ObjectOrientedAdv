@@ -11,6 +11,8 @@ AHatchback::AHatchback()
 
 	Speed = 90.0f;
 	Weight = 1500.0f;
+	Year = 2000;
+	Seats = 5;
 
 }
 
@@ -37,3 +39,15 @@ float AHatchback::GetWeight_Implementation()
 {
 	return Weight;
 }
+
+int AHatchback::GetYear_Implementation()
+{
+	return Year;
+}
+
+int AHatchback::GetSeats_Implementation()
+{
+	return Seats;
+}
+
+

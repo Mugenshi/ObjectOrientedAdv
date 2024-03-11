@@ -11,6 +11,8 @@ APickup::APickup()
 
 	Speed = 120.0f;
 	Weight = 2500.0f;
+	Year = 1984;
+	Seats = 2;
 
 }
 
@@ -37,3 +39,16 @@ float APickup::GetWeight_Implementation()
 {
 	return Weight;
 }
+
+
+int APickup::GetYear_Implementation()
+{
+	return Year;
+}
+
+int APickup::GetSeats_Implementation()
+{
+	return Seats;
+}
+
+

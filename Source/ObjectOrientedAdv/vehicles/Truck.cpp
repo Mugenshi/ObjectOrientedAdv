@@ -11,7 +11,8 @@ ATruck::ATruck()
 
 	Speed = 50.0f;
 	Weight = 5000.0f;
-
+	Year = 1990;
+	Seats = 2;
 }
 
 // Called when the game starts or when spawned
@@ -36,4 +37,14 @@ float ATruck::GetSpeed_Implementation()
 float ATruck::GetWeight_Implementation()
 {
 	return Weight;
+}
+
+int ATruck::GetYear_Implementation()
+{
+	return Year;
+}
+
+int ATruck::GetSeats_Implementation()
+{
+	return Seats;
 }
