@@ -7,6 +7,8 @@
 
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
+#include "Components/AudioComponent.h"
+
 #include "TimerManager.h"
 #include "Animation/AnimMontage.h"
 
