@@ -16,14 +16,14 @@ AHatchback::AHatchback()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void AHatchback::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void AHatchback::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

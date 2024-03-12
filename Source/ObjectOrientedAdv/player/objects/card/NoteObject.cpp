@@ -11,14 +11,14 @@ ANoteObject::ANoteObject()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ANoteObject::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ANoteObject::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

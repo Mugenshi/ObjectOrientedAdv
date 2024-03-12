@@ -17,14 +17,14 @@ ACamperVan::ACamperVan()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ACamperVan::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ACamperVan::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

@@ -11,14 +11,14 @@ AMonitor::AMonitor()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void AMonitor::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void AMonitor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

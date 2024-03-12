@@ -38,7 +38,7 @@ ADeer::ADeer()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ADeer::BeginPlay()
 {
 	Super::BeginPlay();
@@ -47,14 +47,14 @@ void ADeer::BeginPlay()
 	
 }
 
-// Called every frame
+ 
 void ADeer::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
+ 
 void ADeer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);

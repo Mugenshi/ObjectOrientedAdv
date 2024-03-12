@@ -10,37 +10,37 @@
 
 void APlayerCPPController::OnPossess(APawn* aPawn)
 {
-    // Call the parent method, to let it do anything it needs to.
+    //call the parent method
     Super::OnPossess(aPawn);
 
-    // Store a reference to the Player's HUD.
+    //store a reference to the Player's HUD.
     PlayerHUD = Cast<APlayerCPPHUD>(GetHUD());
     checkf(PlayerHUD, TEXT("Unable to get reference to the HUD."));
 
-    // Store a reference to the Player's Pawn.
+    //store a reference to the Player's Pawn.
     PlayerCharacter = Cast<APlayerCPP>(aPawn);
     checkf(PlayerCharacter,
         TEXT("APlayerCPPController derived classes should only possess APlayerCPP derived pawns."));
 
-    // Get a rederence to the EnhancedInputComponent.
+    //get a rederence to the EnhancedInputComponent.
     EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent);
     checkf(EnhancedInputComponent,
         TEXT("Unable to get referenct to the EnhancedInpuComponent."));
 
-    // Get the local player subsystem
-    // Just a local variable, we don't need to refer to it again after this.
+    //get the local player subsystem
+    //just a local variable, we don't need to refer to it again after this.
     UEnhancedInputLocalPlayerSubsystem* InputSubsystem =
              ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
     checkf(InputSubsystem,
         TEXT("Unable to get reference to the EnhancedInputLocalPlayerSubsystem."));
 
-    // Wipe existing mappings, and add our mapping.
+    //delete ipe existing mappings, and add our mapping.
     checkf(InputMappingContext, TEXT("InputMappingContent was not specified."));
     InputSubsystem->ClearAllMappings();
     InputSubsystem->AddMappingContext(InputMappingContext, 0);
 
-    // Bind the input actions.
-    // Only attempt to bind if valid values were provided.
+    //bind the input actions.
+
     if (ActionMove) EnhancedInputComponent->BindAction(ActionMove, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleMove);
 
     if (ActionLook) EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Triggered, this, &APlayerCPPController::HandleLook);
