@@ -15,14 +15,14 @@ ABook::ABook()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ABook::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ABook::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
