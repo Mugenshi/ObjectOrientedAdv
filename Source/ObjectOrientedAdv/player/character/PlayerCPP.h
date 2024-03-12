@@ -7,7 +7,7 @@
 
 #include "Components/CapsuleComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Components/AudioComponent.h"
+#include "Sound/SoundWave.h"
 
 #include "TimerManager.h"
 #include "Animation/AnimMontage.h"
@@ -141,6 +141,12 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Montage", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UAnimMontage> AnimMontage;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	TObjectPtr<USoundWave> Cashing;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	TObjectPtr<USoundWave> Collect;
 	
 	// Player Keys
 	TArray<FString> KeyWallet;
