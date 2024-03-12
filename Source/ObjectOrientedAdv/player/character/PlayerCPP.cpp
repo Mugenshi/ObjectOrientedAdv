@@ -6,8 +6,10 @@
 #include "GameFramework/CharacterMovementComponent.h"
 
 
+//set default values
 APlayerCPP::APlayerCPP()
 {
+	// set this character to call Tick() every frame.
 	PrimaryActorTick.bCanEverTick = true;
 	SetActorTickInterval(0.5f);
 	SetActorTickEnabled(true);
@@ -42,7 +44,8 @@ APlayerCPP::APlayerCPP()
 
 }
 
- 
+
+//called when the game starts or when spawned
 void APlayerCPP::BeginPlay()
 {
 	Super::BeginPlay();
@@ -64,9 +67,9 @@ void APlayerCPP::BeginPlay()
 }
 
  
+//called every frame
 void APlayerCPP::Tick(float DeltaTime)
 {
-	// Call the super... it probably needs to do stuff!
 	Super::Tick(DeltaTime);
 
 	// Temporarily display debug information
@@ -77,7 +80,7 @@ void APlayerCPP::Tick(float DeltaTime)
 
 }
 
- 
+//called to bind functionality to input
 void APlayerCPP::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
