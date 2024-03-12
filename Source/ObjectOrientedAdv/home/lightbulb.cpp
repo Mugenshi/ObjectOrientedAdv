@@ -11,14 +11,14 @@ Alightbulb::Alightbulb()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void Alightbulb::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void Alightbulb::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

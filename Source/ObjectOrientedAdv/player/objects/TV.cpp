@@ -22,14 +22,14 @@ ATV::ATV()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ATV::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ATV::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

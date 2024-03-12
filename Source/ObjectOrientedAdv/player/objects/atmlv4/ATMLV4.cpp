@@ -11,14 +11,14 @@ AATMLV4::AATMLV4()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void AATMLV4::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void AATMLV4::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

@@ -11,14 +11,14 @@ ARefridge::ARefridge()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void ARefridge::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ARefridge::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

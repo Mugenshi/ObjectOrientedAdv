@@ -15,14 +15,14 @@ ATruck::ATruck()
 	Seats = 2;
 }
 
-// Called when the game starts or when spawned
+ 
 void ATruck::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
 
-// Called every frame
+ 
 void ATruck::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
