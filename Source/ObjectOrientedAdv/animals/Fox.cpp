@@ -5,10 +5,9 @@
 #include "Components/CapsuleComponent.h"
 #include "ObjectOrientedAdv/ObjectOrientedAdv.h"
 
-// Sets default values
+
 AFox::AFox()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> FoxMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/Fox/Meshes/SK_Fox.SK_Fox'"));
@@ -38,7 +37,7 @@ AFox::AFox()
 
 }
 
-// Called when the game starts or when spawned
+ 
 void AFox::BeginPlay()
 {
 	Super::BeginPlay();
@@ -47,14 +46,14 @@ void AFox::BeginPlay()
 	
 }
 
-// Called every frame
+ 
 void AFox::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
+ 
 void AFox::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);

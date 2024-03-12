@@ -18,19 +18,28 @@ class OBJECTORIENTEDADV_API APickup : public AActor, public IVehicles
 	UPROPERTY(EditAnywhere)
 	float Weight;
 	
+	UPROPERTY()
+	int Year;
+
+	UPROPERTY()
+	int Seats;
+
+
 public:	
 	// Sets default values for this actor's properties
 	APickup();
 
 protected:
-	// Called when the game starts or when spawned
+	 
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	 
 	virtual void Tick(float DeltaTime) override;
 
 	float GetSpeed_Implementation();
 	float GetWeight_Implementation();
+	int GetYear_Implementation() override;
+	int GetSeats_Implementation() override;
 
 };

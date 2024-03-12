@@ -17,20 +17,30 @@ class OBJECTORIENTEDADV_API ACamperVan : public AActor, public IVehicles
 
 	UPROPERTY()
 	float Weight;
+
+	UPROPERTY()
+	int Year;
+
+	UPROPERTY()
+	int Seats;
 	
 public:	
 	// Sets default values for this actor's properties
 	ACamperVan();
 
 protected:
-	// Called when the game starts or when spawned
+	 
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+	 
 	virtual void Tick(float DeltaTime) override;
 
 	float GetSpeed_Implementation() override;
 	float GetWeight_Implementation() override;
+	int GetYear_Implementation() override;
+	int GetSeats_Implementation() override;
+
+
 
 };
