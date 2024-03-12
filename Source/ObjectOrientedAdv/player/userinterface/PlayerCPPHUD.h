@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
+#include "GameFramework/Actor.h"
+#include "TimerManager.h"
 #include "Components/Widget.h"
 #include "PlayerCPPHUD.generated.h"
 
