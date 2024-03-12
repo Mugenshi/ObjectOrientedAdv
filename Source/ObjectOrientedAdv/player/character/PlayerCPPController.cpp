@@ -34,7 +34,6 @@ void APlayerCPPController::OnPossess(APawn* aPawn)
     checkf(InputSubsystem,
         TEXT("Unable to get reference to the EnhancedInputLocalPlayerSubsystem."));
 
-    //delete ipe existing mappings, and add our mapping.
     checkf(InputMappingContext, TEXT("InputMappingContent was not specified."));
     InputSubsystem->ClearAllMappings();
     InputSubsystem->AddMappingContext(InputMappingContext, 0);
@@ -54,19 +53,19 @@ void APlayerCPPController::OnPossess(APawn* aPawn)
 
 void APlayerCPPController::OnUnPossess()
 {
-    // Unbind things here.
+    // unbind things
     EnhancedInputComponent->ClearActionBindings();
 
-    // Call the parent method, in case it needs to do anything.
+    //call the parent method, in case it needs to do anything.
     Super::OnUnPossess();
 }
 
 void APlayerCPPController::HandleMove(const FInputActionValue& InputActionValue)
 {
-    // Value is a Vector2D
+
     const FVector2D MovementVector = InputActionValue.Get<FVector2D>();
 
-    // Add movement to the Player's Pawn.
+    //add movement to player's Pawn.
     if (PlayerCharacter)
     {
         PlayerCharacter->AddMovementInput(PlayerCharacter->GetActorForwardVector(), MovementVector.Y);
@@ -79,14 +78,13 @@ void APlayerCPPController::HandleLook(const FInputActionValue& InputActionValue)
     // Value is a Vector2D
     const FVector2D LookAxisVector = InputActionValue.Get<FVector2D>();
 
-    // Add yaw and pitch to the Player's Pawn.
     AddYawInput(LookAxisVector.X);
     AddPitchInput(LookAxisVector.Y);
 }
 
 void APlayerCPPController::HandleJump()
 {
-    // Call the Jump method on the Player's Pawn.
+    //call the Jump method on the Player's Pawn.
     if (PlayerCharacter)
     {
         PlayerCharacter->UnCrouch();
@@ -97,7 +95,7 @@ void APlayerCPPController::HandleJump()
 
 void APlayerCPPController::HandleInteract()
 {
-    // Call the Interact method on the Player's Pawn.
+    //call the Interact method on the Player's Pawn.
     if (PlayerCharacter)
     {
         FString isATM = PlayerCharacter->Interact();

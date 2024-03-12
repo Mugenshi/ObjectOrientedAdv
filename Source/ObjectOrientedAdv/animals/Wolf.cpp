@@ -5,10 +5,9 @@
 #include "Components/CapsuleComponent.h"
 #include "ObjectOrientedAdv/animals/Wolf.h"
 
-// Sets default values
+
 AWolf::AWolf()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> WolfMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/Wolf/Meshes/SK_Wolf.SK_Wolf'"));

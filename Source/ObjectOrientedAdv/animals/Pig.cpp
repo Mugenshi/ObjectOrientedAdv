@@ -6,10 +6,10 @@
 #include "Components/CapsuleComponent.h"
 #include "ObjectOrientedAdv/ObjectOrientedAdv.h"
 
-// Sets default values
+
 APig::APig()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+ 	
 	PrimaryActorTick.bCanEverTick = true;
 
 	static ConstructorHelpers::FObjectFinder<USkeletalMesh> PigMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/Pig/Meshes/SK_Pig.SK_Pig'"));
@@ -37,7 +37,7 @@ APig::APig()
 	Name = "Pig";
 }
 
-// Called when the game starts or when spawned
+
 void APig::BeginPlay()
 {
 	Super::BeginPlay();
@@ -46,14 +46,14 @@ void APig::BeginPlay()
 	
 }
 
-// Called every frame
+
 void APig::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
 }
 
-// Called to bind functionality to input
+
 void APig::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
