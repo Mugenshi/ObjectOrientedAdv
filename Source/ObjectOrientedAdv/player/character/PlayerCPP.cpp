@@ -145,8 +145,7 @@ FString APlayerCPP::Interact()
 			moneyLimit += 1000;
 			money += 1000;
 			return "false";
-		};
-
+		}
 
 	}
 
@@ -154,6 +153,36 @@ FString APlayerCPP::Interact()
 	{
 		return "true";
 	}
+
+	if (Cast<ACarSale>(InteractHitResult.GetActor()))
+	{
+		ACarSale* CarSale = Cast<ACarSale>(UGameplayStatics::GetActorOfClass(GetWorld(), ACarSale::StaticClass()));
+		AATM* ATM = Cast<AATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AATM::StaticClass()));
+
+		if ((ATM->GetMoneyATM()) >= CarSale->get_price())
+		{
+			ATM->DeductMoneyATM(CarSale->get_price());
+			CarSale->Destroy();
+		}
+
+		return "false";
+	}
+
+	if (Cast<ARefridgerator>(InteractHitResult.GetActor()))
+	{
+		ARefridgerator* Refridgerator = Cast<ARefridgerator>(UGameplayStatics::GetActorOfClass(GetWorld(), ARefridgerator::StaticClass()));
+		AATM* ATM = Cast<AATM>(UGameplayStatics::GetActorOfClass(GetWorld(), AATM::StaticClass()));
+
+		if ((ATM->GetMoneyATM()) >= Refridgerator->get_price())
+		{
+			ATM->DeductMoneyATM(Refridgerator->get_price());
+			Refridgerator->Destroy();
+		}
+
+		return "false";
+	}
+
+
 
 	if (Cast<ATV>(InteractHitResult.GetActor()))
 	{

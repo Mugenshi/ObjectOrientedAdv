@@ -13,6 +13,8 @@
 #include "ObjectOrientedAdv/player/objects/Money.h"
 #include "ObjectOrientedAdv/player/objects/ATM.h"
 #include "ObjectOrientedAdv/player/objects/TV.h"
+#include "ObjectOrientedAdv/player/objects/CarSale.h"
+#include "ObjectOrientedAdv/player/objects/Refridgerator.h"
 #include "ObjectOrientedAdv/player/objects/card/VisaRegular.h"
 #include "ObjectOrientedAdv/player/objects/card/AmericanExpress.h"
 #include "ObjectOrientedAdv/player/objects/card/VisaPrev.h"

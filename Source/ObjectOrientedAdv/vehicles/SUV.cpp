@@ -11,6 +11,8 @@ ASUV::ASUV()
 
 	Speed = 80.0f;
 	Weight = 3000.0f;
+	Year = 1996;
+	Seats = 5;
 
 }
 
@@ -37,3 +39,15 @@ float ASUV::GetWeight_Implementation()
 {
 	return Weight;
 }
+
+int ASUV::GetYear_Implementation()
+{
+	return Year;
+}
+
+int ASUV::GetSeats_Implementation()
+{
+	return Seats;
+}
+
+

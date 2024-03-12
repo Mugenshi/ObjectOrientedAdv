@@ -11,6 +11,8 @@ ASportsCar::ASportsCar()
 
 	Speed = 100.0f;
 	Weight = 2000.0f;
+	Year = 1982;
+	Seats = 2;
 
 }
 
@@ -37,3 +39,15 @@ float ASportsCar::GetWeight_Implementation()
 {
 	return Weight;
 }
+
+int ASportsCar::GetYear_Implementation()
+{
+	return Year;
+}
+
+int ASportsCar::GetSeats_Implementation()
+{
+	return Seats;
+}
+
+

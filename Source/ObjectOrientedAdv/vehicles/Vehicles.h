@@ -27,4 +27,10 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Vehicles")
 	float GetWeight();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Vehicles")
+	int GetYear();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Vehicles")
+	int GetSeats();
 };
