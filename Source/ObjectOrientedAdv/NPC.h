@@ -1,34 +1,42 @@
+
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BehaviorTree/BehaviorTree.h"
 #include "GameFramework/Character.h"
+#include "BehaviorTree/BehaviorTree.h"
 #include "NPC.generated.h"
+
 
 UCLASS()
 class OBJECTORIENTEDADV_API ANPC : public ACharacter
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
+
+
 
 public:
-    ANPC();
+	// Sets default values for this character's properties
+	ANPC();
 
-    virtual void Tick(float DeltaTime) override;
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
-    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-    UBehaviorTree* GetBehaviorTree() const;
+	UBehaviorTree* GetBehaviorTree() const;
 
-    UFUNCTION(BlueprintCallable, Category = "NPC")
-    FString get_name();
+	UFUNCTION(BlueprintCallable, Category = "NPC")
+	FString get_name();
 
 protected:
-    virtual void BeginPlay() override;
 
-    UPROPERTY(EditAnywhere, Category="attribute")
-    FString name;
+	UPROPERTY(EditAnywhere, Category = "attribute")
+	FString name;
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
 
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="AI", meta=(AllowPrivateAccess="true"))
-    UBehaviorTree* Tree;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI", meta = (AllowPrivateAccess = "true"))
+	UBehaviorTree* Tree;
 
 };
