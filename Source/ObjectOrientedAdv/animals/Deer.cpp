@@ -36,6 +36,10 @@ ADeer::ADeer()
 
 	Name = "Deer";
 
+	Say = "Bleat";
+
+	Type = "Herbivore";
+
 }
 
  
@@ -101,4 +105,14 @@ void ADeer::RandomRoam_Implementation()
 FString ADeer::GetName_Implementation()
 {
 	return Name;
+}
+
+FString ADeer::GetSay_Implementation()
+{
+	return Say;
+}
+
+FString ADeer::GetType_Implementation()
+{
+	return Type;
 }

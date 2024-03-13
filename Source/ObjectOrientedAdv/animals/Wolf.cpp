@@ -34,6 +34,10 @@ AWolf::AWolf()
 
 	Name = "Wolf";
 
+	Say = "Howl";
+
+	Type = "Carnivore";
+
 }
 
  
@@ -99,4 +103,14 @@ void AWolf::RandomRoam_Implementation()
 FString AWolf::GetName_Implementation()
 {
 	return Name;
+}
+
+FString AWolf::GetType_Implementation()
+{
+	return Type;
+}
+
+FString AWolf::GetSay_Implementation()
+{
+	return Say;
 }

@@ -35,6 +35,10 @@ AFox::AFox()
 
 	Name = "Fox";
 
+	Say = "Ring-ding-ding-ding-dingeringeding!";
+
+	Type = "Carnivore";
+
 }
 
  
@@ -99,4 +103,14 @@ void AFox::RandomRoam_Implementation()
 FString AFox::GetName_Implementation()
 {
 	return Name;
+}
+
+FString AFox::GetType_Implementation()
+{
+	return Type;
+}
+
+FString AFox::GetSay_Implementation()
+{
+	return Say;
 }

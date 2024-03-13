@@ -18,6 +18,12 @@ class OBJECTORIENTEDADV_API APig : public ACharacter, public IAnimals
 	UPROPERTY(EditAnywhere)
 	FString Name;
 
+	UPROPERTY(EditAnywhere)
+	FString Say;
+
+	UPROPERTY(EditAnywhere)
+	FString Type;
+
 public:
 	
 	APig();
@@ -37,5 +43,9 @@ public:
 	void RandomRoam_Implementation() override;
 
 	FString GetName_Implementation() override;
+
+	FString GetType_Implementation() override;
+
+	FString GetSay_Implementation() override;
 
 };

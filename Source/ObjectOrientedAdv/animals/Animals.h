@@ -28,5 +28,11 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Animals")
 	FString GetName();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Animals")
+	FString GetType();
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Animals")
+	FString GetSay();
 	
 };

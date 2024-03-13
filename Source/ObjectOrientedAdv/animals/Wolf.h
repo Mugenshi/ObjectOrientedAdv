@@ -18,6 +18,12 @@ class OBJECTORIENTEDADV_API AWolf : public ACharacter, public IAnimals
 	UPROPERTY(EditAnywhere)
 	FString Name;
 
+	UPROPERTY(EditAnywhere)
+	FString Say;
+
+	UPROPERTY(EditAnywhere)
+	FString Type;
+
 public:
 	 
 	AWolf();
@@ -38,5 +44,9 @@ public:
 	void RandomRoam_Implementation() override;
 
 	FString GetName_Implementation() override;
+
+	FString GetType_Implementation() override;
+
+	FString GetSay_Implementation() override;
 
 };

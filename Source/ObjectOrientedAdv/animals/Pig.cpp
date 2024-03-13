@@ -35,6 +35,10 @@ APig::APig()
 	MovementPtr->MaxWalkSpeed = 150.0f;
 
 	Name = "Pig";
+
+	Say = "Oink";
+
+	Type = "Omnivore";
 }
 
 
@@ -101,4 +105,14 @@ void APig::RandomRoam_Implementation()
 FString APig::GetName_Implementation()
 {
 	return Name;
+}
+
+FString APig::GetType_Implementation()
+{
+	return Type;
+}
+
+FString APig::GetSay_Implementation()
+{
+	return Say;
 }

@@ -18,6 +18,12 @@ class OBJECTORIENTEDADV_API ADeer : public ACharacter, public IAnimals
 	UPROPERTY()
 	FString Name;
 
+	UPROPERTY()
+	FString Say;
+
+	UPROPERTY();
+	FString Type;
+
 public:
 	ADeer();
 
@@ -34,5 +40,9 @@ public:
 	void RandomRoam_Implementation() override;
 
 	FString GetName_Implementation() override;
+
+	FString GetType_Implementation() override;
+
+	FString GetSay_Implementation() override;
 
 };
