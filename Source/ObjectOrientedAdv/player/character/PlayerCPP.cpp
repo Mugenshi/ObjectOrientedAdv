@@ -22,10 +22,13 @@ APlayerCPP::APlayerCPP()
 
 	static ConstructorHelpers::FObjectFinder<USoundWave> CollectingAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/collect_sound.collect_sound'"));
 
-	if (CashingAsset.Succeeded() && CollectingAsset.Succeeded())
+	static ConstructorHelpers::FObjectFinder<USoundWave> PaperAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/paper.paper'"));
+
+	if (CashingAsset.Succeeded() && CollectingAsset.Succeeded() && PaperAsset.Succeeded())
 	{
 		Cashing = CashingAsset.Object;
 		Collect = CollectingAsset.Object;
+		PickupPaper = PaperAsset.Object;
 	}
 
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
@@ -360,6 +363,7 @@ FString APlayerCPP::Interact()
 
 	if (Cast<ANoteObject>(InteractHitResult.GetActor()))
 	{
+		UGameplayStatics::PlaySound2D(this, PickupPaper);
 		return "note";
 	}
 
