@@ -18,6 +18,16 @@ APlayerCPP::APlayerCPP()
 
 	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> QuinnAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn'"));
 
+	static ConstructorHelpers::FObjectFinder<USoundWave> CashingAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/cash_sound.cash_sound'"));
+
+	static ConstructorHelpers::FObjectFinder<USoundWave> CollectingAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/collect_sound.collect_sound'"));
+
+	if (CashingAsset.Succeeded() && CollectingAsset.Succeeded())
+	{
+		Cashing = CashingAsset.Object;
+		Collect = CollectingAsset.Object;
+	}
+
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
@@ -138,14 +148,15 @@ FString APlayerCPP::Interact()
 	{
 		if (moneyLimit >= 50000) {
 			AMoney* MONEY = Cast<AMoney>(UGameplayStatics::GetActorOfClass(GetWorld(), AMoney::StaticClass()));
-			GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
-				*(FString::Printf(TEXT("Money has accumulated to its limit"), KeyWallet.Num())));
 			MONEY->Destroy();
 			return "false";
 		}
 		else {
 			moneyLimit += 1000;
 			money += 1000;
+
+			UGameplayStatics::PlaySound2D(this, Collect);
+
 			return "false";
 		}
 
@@ -164,6 +175,9 @@ FString APlayerCPP::Interact()
 		if ((ATM->GetMoneyATM()) >= CarSale->get_price())
 		{
 			ATM->DeductMoneyATM(CarSale->get_price());
+
+			UGameplayStatics::PlaySound2D(this, Cashing);
+
 			CarSale->Destroy();
 		}
 
@@ -178,6 +192,9 @@ FString APlayerCPP::Interact()
 		if ((ATM->GetMoneyATM()) >= Refridgerator->get_price())
 		{
 			ATM->DeductMoneyATM(Refridgerator->get_price());
+
+			UGameplayStatics::PlaySound2D(this, Cashing);
+
 			Refridgerator->Destroy();
 		}
 
@@ -194,6 +211,9 @@ FString APlayerCPP::Interact()
 		if ((ATM->GetMoneyATM()) >= TV->get_price())
 		{
 			ATM->DeductMoneyATM(TV->get_price());
+
+			UGameplayStatics::PlaySound2D(this, Cashing);
+
 			TV->Destroy();
 		}
 
