@@ -147,6 +147,9 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Sound")
 	TObjectPtr<USoundWave> Collect;
+
+	UPROPERTY(EditAnywhere, Category = "Sound")
+	TObjectPtr<USoundWave> PickupPaper;
 	
 	// Player Keys
 	TArray<FString> KeyWallet;
