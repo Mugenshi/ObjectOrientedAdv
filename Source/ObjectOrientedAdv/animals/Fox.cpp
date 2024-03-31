@@ -16,18 +16,18 @@ AFox::AFox()
 
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	if (FoxMesh.Succeeded())
-	{
-		GetMesh()->SetSkeletalMesh(FoxMesh.Object);
-		GetMesh()->SetAnimInstanceClass(FoxAnim.Object->GeneratedClass);
-		GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-		GetMesh()->SetRelativeScale3D(FVector(2.0f, 2.0f, 2.0f));
+	//if (FoxMesh.Succeeded())
+	//{
+	//	GetMesh()->SetSkeletalMesh(FoxMesh.Object);
+	//	GetMesh()->SetAnimInstanceClass(FoxAnim.Object->GeneratedClass);
+	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
+	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	//	GetMesh()->SetRelativeScale3D(FVector(2.0f, 2.0f, 2.0f));
 
-		Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-		Capsule->SetCapsuleHalfHeight(88.0f);
-		Capsule->SetCapsuleRadius(88.0f);
-	}
+	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	//	Capsule->SetCapsuleHalfHeight(88.0f);
+	//	Capsule->SetCapsuleRadius(88.0f);
+	//}
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 

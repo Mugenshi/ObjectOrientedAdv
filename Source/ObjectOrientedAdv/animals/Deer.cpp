@@ -17,18 +17,20 @@ ADeer::ADeer()
 
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	if (DeerMesh.Succeeded())
-	{
-		GetMesh()->SetSkeletalMesh(DeerMesh.Object);
-		GetMesh()->SetAnimInstanceClass(DeerAnim.Object->GeneratedClass);
-		GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	//
+	//if (DeerMesh.Succeeded())
+	//{
+	//	GetMesh()->SetSkeletalMesh(DeerMesh.Object);
+	//	GetMesh()->SetAnimInstanceClass(DeerAnim.Object->GeneratedClass);
+	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
+	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
-		Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-		Capsule->SetCapsuleHalfHeight(88.0f);
-		Capsule->SetCapsuleRadius(88.0f);
+	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	//	Capsule->SetCapsuleHalfHeight(88.0f);
+	//	Capsule->SetCapsuleRadius(88.0f);
 
-	}
+	//}
+	
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 

@@ -16,17 +16,17 @@ AWolf::AWolf()
 
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	if (WolfMesh.Succeeded())
-	{
-		GetMesh()->SetSkeletalMesh(WolfMesh.Object);
-		GetMesh()->SetAnimInstanceClass(WolfAnim.Object->GeneratedClass);
-		GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-		GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	//if (WolfMesh.Succeeded())
+	//{
+	//	GetMesh()->SetSkeletalMesh(WolfMesh.Object);
+	//	GetMesh()->SetAnimInstanceClass(WolfAnim.Object->GeneratedClass);
+	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
+	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
 
-		Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-		Capsule->SetCapsuleHalfHeight(88.0f);
-		Capsule->SetCapsuleRadius(88.0f);
-	}
+	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	//	Capsule->SetCapsuleHalfHeight(88.0f);
+	//	Capsule->SetCapsuleRadius(88.0f);
+	//}
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 
