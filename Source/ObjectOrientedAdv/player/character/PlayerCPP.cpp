@@ -14,10 +14,6 @@ APlayerCPP::APlayerCPP()
 	SetActorTickInterval(0.5f);
 	SetActorTickEnabled(true);
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> QuinnMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple'"));
-
-	//static ConstructorHelpers::FObjectFinder<UAnimBlueprint> QuinnAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn'"));
-
 	static ConstructorHelpers::FObjectFinder<USoundWave> CashingAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/cash_sound.cash_sound'"));
 
 	static ConstructorHelpers::FObjectFinder<USoundWave> CollectingAsset(TEXT("/Script/Engine.SoundWave'/Game/SoundEffect/collect_sound.collect_sound'"));
@@ -37,23 +33,14 @@ APlayerCPP::APlayerCPP()
 
 	money = 0;
 
-	if (QuinnMesh.Succeeded())
-	{
-		//GetMesh()->SetSkeletalMesh(QuinnMesh.Object);
-		//GetMesh()->SetAnimInstanceClass(QuinnAnim.Object->GeneratedClass);
-		//GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-		//GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
+	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	Capsule->SetCapsuleHalfHeight(90.0f);
+	Capsule->SetCapsuleRadius(35.0f);
 
-		Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-		Capsule->SetCapsuleHalfHeight(90.0f);
-		Capsule->SetCapsuleRadius(35.0f);
-
-		Camera->SetupAttachment(GetMesh(), FName("Head"));
-		Camera->SetRelativeLocation(FVector(5.0f, 9.0f, 0.0f));
-		Camera->SetRelativeRotation(FRotator(0.0f, 90.0f, -90.0f));
-		Camera->bUsePawnControlRotation = true;
-
-	}
+	Camera->SetupAttachment(GetMesh(), FName("Head"));
+	Camera->SetRelativeLocation(FVector(5.0f, 9.0f, 0.0f));
+	Camera->SetRelativeRotation(FRotator(0.0f, 90.0f, -90.0f));
+	Camera->bUsePawnControlRotation = true;
 
 }
 

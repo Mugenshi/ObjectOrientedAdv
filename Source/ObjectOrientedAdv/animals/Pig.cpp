@@ -12,23 +12,11 @@ APig::APig()
  	
 	PrimaryActorTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> PigMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/Pig/Meshes/SK_Pig.SK_Pig'"));
-	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> PigAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Blueprints/BP_AIAnimal/AB_Pig.AB_Pig'"));
-
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	//if (PigMesh.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(PigMesh.Object);
-	//	GetMesh()->SetAnimInstanceClass(PigAnim.Object->GeneratedClass);
-	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-
-	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-	//	Capsule->SetCapsuleHalfHeight(88.0f);
-	//	Capsule->SetCapsuleRadius(88.0f);
-
-	//}
+	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	Capsule->SetCapsuleHalfHeight(88.0f);
+	Capsule->SetCapsuleRadius(88.0f);
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 

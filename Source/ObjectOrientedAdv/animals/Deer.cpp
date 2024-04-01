@@ -11,26 +11,11 @@ ADeer::ADeer()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> DeerMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/DeerStagAndDoe/Meshes/SK_DeerDoe.SK_DeerDoe'"));
-
-	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> DeerAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Blueprints/BP_AIAnimal/AB_Deer.AB_Deer'"));
-
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	//
-	//if (DeerMesh.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(DeerMesh.Object);
-	//	GetMesh()->SetAnimInstanceClass(DeerAnim.Object->GeneratedClass);
-	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-
-	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-	//	Capsule->SetCapsuleHalfHeight(88.0f);
-	//	Capsule->SetCapsuleRadius(88.0f);
-
-	//}
-	
+	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	Capsule->SetCapsuleHalfHeight(88.0f);
+	Capsule->SetCapsuleRadius(88.0f);
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 

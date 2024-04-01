@@ -10,24 +10,11 @@ AFox::AFox()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	static ConstructorHelpers::FObjectFinder<USkeletalMesh> FoxMesh(TEXT("/Script/Engine.SkeletalMesh'/Game/AnimalVarietyPack/Fox/Meshes/SK_Fox.SK_Fox'"));
-
-	static ConstructorHelpers::FObjectFinder<UAnimBlueprint> FoxAnim(TEXT("/Script/Engine.AnimBlueprint'/Game/Blueprints/BP_AIAnimal/AB_Fox.AB_Fox'"));
-
 	UCapsuleComponent* Capsule = GetCapsuleComponent();
 
-	//if (FoxMesh.Succeeded())
-	//{
-	//	GetMesh()->SetSkeletalMesh(FoxMesh.Object);
-	//	GetMesh()->SetAnimInstanceClass(FoxAnim.Object->GeneratedClass);
-	//	GetMesh()->SetRelativeLocation(FVector(0.0f, 0.0f, -80.0f));
-	//	GetMesh()->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-	//	GetMesh()->SetRelativeScale3D(FVector(2.0f, 2.0f, 2.0f));
-
-	//	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
-	//	Capsule->SetCapsuleHalfHeight(88.0f);
-	//	Capsule->SetCapsuleRadius(88.0f);
-	//}
+	Capsule->SetRelativeLocation(FVector(0.0f, 0.0f, 0.0f));
+	Capsule->SetCapsuleHalfHeight(88.0f);
+	Capsule->SetCapsuleRadius(88.0f);
 
 	UCharacterMovementComponent* MovementPtr = Cast<UCharacterMovementComponent>(GetMovementComponent());
 
