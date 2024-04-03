@@ -12,8 +12,6 @@ class OBJECTORIENTEDADV_API ANPC : public ACharacter
 {
 	GENERATED_BODY()
 
-
-
 public:
 	 
 	ANPC();

@@ -113,11 +113,3 @@ void APlayerCPPController::HandleInteract()
         }
     }
 }
-
-// void APlayerCPPController::HandleCycleUIMode()
-// {
-//     if (PlayerHUD)
-//     {
-//         PlayerHUD->CycleToNextViewMode();
-//     }
-// }

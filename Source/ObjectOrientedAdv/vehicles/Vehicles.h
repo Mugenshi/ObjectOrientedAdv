@@ -19,8 +19,6 @@ class IVehicles
 {
 	GENERATED_BODY()
 
-
-
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Vehicles")
 	float GetSpeed();

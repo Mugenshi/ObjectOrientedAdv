@@ -72,10 +72,6 @@ void APlayerCPP::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	// Temporarily display debug information
-	GEngine->AddOnScreenDebugMessage(-1, 0.49f, FColor::Orange,
-		*(FString::Printf(TEXT("Keys - %d Keys Currently held"), KeyWallet.Num())));
-
 	InteractCheck();
 
 }

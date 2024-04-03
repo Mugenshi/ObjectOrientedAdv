@@ -37,11 +37,6 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Interaction")
 	TObjectPtr<UInputAction> ActionInteract = nullptr;
 
-
-	// The Input Action to cycle UI display mode.
-	// UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|UI")
-	// TObjectPtr<UInputAction> ActionCycleUIMode = nullptr;
-
 	// The Input Mapping Context to use.
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Input|Character Movement")
 	TObjectPtr<UInputMappingContext> InputMappingContext = nullptr;
@@ -53,7 +48,6 @@ protected:
 	void HandleJump();
 	void HandleSprint();
 	void HandleInteract();
-	// void HandleCycleUIMode();
 
 	virtual void OnPossess(APawn* InPawn) override;
 	virtual void OnUnPossess() override;
@@ -70,7 +64,6 @@ private:
 	// Used to store a reference to the pawn we are controlling.
 	UPROPERTY()
 	TObjectPtr<APlayerCPPHUD> PlayerHUD = nullptr;
-
 
 	GENERATED_BODY()
 	

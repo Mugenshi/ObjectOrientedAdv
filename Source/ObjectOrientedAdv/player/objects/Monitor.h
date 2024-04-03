@@ -15,8 +15,6 @@ public:
 	// Sets default values for this actor's properties
 	AMonitor();
 
-	// UFUNCTION()
-	// void SetColor();
 
 protected:
 	 
